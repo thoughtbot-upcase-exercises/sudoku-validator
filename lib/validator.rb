@@ -1,6 +1,10 @@
+require "verify_valid"
+require "verify_complete"
+
+    require "pry"
 class Validator
   def initialize(puzzle_string)
-    @puzzle_string = puzzle_string
+    self.puzzle_string = puzzle_string
   end
 
   def self.validate(puzzle_string)
@@ -8,10 +12,30 @@ class Validator
   end
 
   def validate
-    # Start creating your solution here.
-    #
-    # It's likely that you'll want to have many more classes than this one that
-    # was provided for you. Don't be hesistant to extract new objects (and
-    # write tests for them).
+    if valid? && incomplete?
+      "This sudoku is valid, but incomplete."
+    elsif invalid?
+      "This sudoku is invalid."
+    else
+      "This sudoku is valid."
+    end
+  end
+
+  protected
+
+  attr_accessor :puzzle_string
+
+  private
+
+  def invalid?
+    ! valid?
+  end
+
+  def valid?
+    VerifyValid.call(puzzle_string)
+  end
+
+  def incomplete?
+    ! VerifyComplete.call(puzzle_string)
   end
 end
