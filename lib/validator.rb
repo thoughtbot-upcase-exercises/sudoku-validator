@@ -1,7 +1,6 @@
 require "verify_valid"
 require "verify_complete"
 
-    require "pry"
 class Validator
   def initialize(puzzle_string)
     self.puzzle_string = puzzle_string
