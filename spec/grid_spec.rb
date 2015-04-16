@@ -13,9 +13,9 @@ describe Grid, ".from_puzzle_string" do
 
     expect(result).to eq(
       [
-        [1,2,3],
-        [4,5,6],
-        [7,8,9]
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
       ]
     )
   end
@@ -32,9 +32,9 @@ describe Grid, ".from_puzzle_string" do
 
     expect(result).to eq(
       [
-        [1,2,3,4,5,6],
-        [1,2,3,4,5,6],
-        [1,2,3,4,5,6]
+        [1, 2, 3, 4, 5, 6],
+        [1, 2, 3, 4, 5, 6],
+        [1, 2, 3, 4, 5, 6]
       ]
     )
   end
@@ -51,8 +51,8 @@ describe Grid, ".from_puzzle_string" do
 
     expect(result).to eq(
       [
-        [1,2,3,4,5,6],
-        [1,2,3,4,5,6],
+        [1, 2, 3, 4, 5, 6],
+        [1, 2, 3, 4, 5, 6]
       ]
     )
   end
