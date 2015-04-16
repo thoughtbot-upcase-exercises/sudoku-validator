@@ -1,7 +1,7 @@
 require "validate_columns"
 
 describe ValidateColumns, ".call" do
-  specify do
+  it "returns true when there are no duplicates" do
     puzzle_string =
       """
       123
@@ -14,7 +14,7 @@ describe ValidateColumns, ".call" do
     expect(result).to eq(true)
   end
 
-  specify do
+  it "returns false when there are duplicates" do
     puzzle_string =
       """
       123
