@@ -1,3 +1,0 @@
-class GridCondition
-
-end

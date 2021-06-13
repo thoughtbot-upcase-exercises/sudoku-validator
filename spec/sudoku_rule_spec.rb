@@ -31,6 +31,18 @@ describe "SudokuRule" do
     end
   end
 
+  describe ".check_sequence" do
+    it "returns if a sequence has non empty duplicate" do
+      full_seq = ["1", "2", "3", "4"]
+      has_empty_seq = ["1", "0", "3", "4"]
+      has_dup_seq = ["1", "1"]
+
+      expect(SudokuRule.check_sequence(has_dup_seq)).to be_falsy
+      expect(SudokuRule.check_sequence(has_empty_seq)).to be_truthy
+      expect(SudokuRule.check_sequence(full_seq)).to be_truthy
+    end
+  end
+
   describe ".check_row" do
     it "returns if all rows satisfy sudoku row rule" do
       expect(SudokuRule.check_row(invalid_grid)).to be_falsy
