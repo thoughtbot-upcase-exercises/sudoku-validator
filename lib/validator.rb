@@ -1,8 +1,4 @@
 require_relative "clean_sudoku"
-require_relative "check_rows"
-require_relative "check_columns"
-require_relative "check_subgroups"
-require_relative "check_completed"
 require_relative "display_output"
 require_relative "check_sudoku"
 
