@@ -1,5 +1,5 @@
 require_relative "clean_sudoku"
-require_relative "display_output"
+require_relative "output"
 require_relative "check_sudoku"
 
 class Validator
@@ -16,6 +16,8 @@ class Validator
     valid = SudokuValidator.valid?(board)
     completed = SudokuValidator.completed?(board)
     
-    DisplayOutput.print_result(valid, completed)
+    # Output.print_result(valid, completed)
+    Output.return_result(valid, completed)
+    
   end
 end
