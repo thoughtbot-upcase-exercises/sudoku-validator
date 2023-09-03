@@ -1,3 +1,11 @@
+require_relative "clean_sudoku"
+require_relative "check_rows"
+require_relative "check_columns"
+require_relative "check_subgroups"
+require_relative "check_completed"
+require_relative "display_output"
+require_relative "check_sudoku"
+
 class Validator
   def initialize(puzzle_string)
     @puzzle_string = puzzle_string
@@ -8,10 +16,10 @@ class Validator
   end
 
   def validate
-    # Start creating your solution here.
-    #
-    # It's likely that you'll want to have many more classes than this one that
-    # was provided for you. Don't be hesistant to extract new objects (and
-    # write tests for them).
+    board = CleanSudoku.clean_board(@puzzle_string)
+    valid = SudokuValidator.valid?(board)
+    completed = SudokuValidator.completed?(board)
+    
+    DisplayOutput.print_result(valid, completed)
   end
 end
