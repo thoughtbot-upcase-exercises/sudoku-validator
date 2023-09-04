@@ -1,4 +1,4 @@
-require_relative "clean_sudoku"
+require_relative "parse_sudoku"
 require_relative "output"
 require_relative "check_sudoku"
 
@@ -12,7 +12,7 @@ class Validator
   end
 
   def validate
-    board = CleanSudoku.clean_board(@puzzle_string)
+    board = ParseSudoku.parse_board(@puzzle_string)
     valid = SudokuValidator.valid?(board)
     completed = SudokuValidator.completed?(board)
     
