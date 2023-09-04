@@ -12,6 +12,7 @@ begin
   path = "spec/fixtures/#{filename.split(".")[0] + ".sudoku"}"
   file = File.read(path)
   result = Validator.validate(file)
+  puts result
 rescue Errno::ENOENT
   puts "File not found: #{filename}"
   exit 1

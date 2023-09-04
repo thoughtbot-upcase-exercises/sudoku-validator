@@ -1,4 +1,6 @@
 class CheckSubgroups
+    EMPTY = 0
+    
     def self.valid?(board)
         (0..2).each do |i|
             (0..2).each do |j|
@@ -9,7 +11,7 @@ class CheckSubgroups
                     end
                 end
                 subgroup.each do |cell|
-                    next if cell == 0
+                    next if cell == EMPTY
                     return false if subgroup.count(cell) > 1
                 end
             end
